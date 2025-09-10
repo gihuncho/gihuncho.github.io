@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Github, Linkedin, Mail, ExternalLink, Filter, X } from "lucide-react"
+import { Github, Linkedin, Mail, ExternalLink, X } from "lucide-react"
 
 interface Project {
   id: string
@@ -20,6 +20,7 @@ interface Project {
       github?: string
       demo?: string
       paper?: string
+      openreview?: string
     }
   }
 }
@@ -179,7 +180,9 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">M.S. in Bioengineering</h4>
-                <p className="text-sm text-muted-foreground">Seoul National University • Seoul, Korea • Mar. 2024 – Feb. 2026</p>
+                <p className="text-sm text-muted-foreground">
+                  Seoul National University • Seoul, Korea • Mar. 2024 – Feb. 2026
+                </p>
               </div>
               <p className="text-sm text-muted-foreground">
                 GPA: 3.97/4.30. Research focus on medical AI and radiology report generation.
@@ -188,7 +191,9 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">B.S. in Biomedical Engineering</h4>
-                <p className="text-sm text-muted-foreground">Hanyang University • Seoul, Korea • Mar. 2018 – Feb. 2024</p>
+                <p className="text-sm text-muted-foreground">
+                  Hanyang University • Seoul, Korea • Mar. 2018 – Feb. 2024
+                </p>
               </div>
               <p className="text-sm text-muted-foreground">
                 GPA: 4.09/4.50. Strong foundation in biomedical engineering and machine learning.
@@ -197,7 +202,9 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Department of Software Development</h4>
-                <p className="text-sm text-muted-foreground">Sunrin Internet Highschool • Seoul, Korea • Mar. 2015 – Feb. 2018</p>
+                <p className="text-sm text-muted-foreground">
+                  Sunrin Internet Highschool • Seoul, Korea • Mar. 2015 – Feb. 2018
+                </p>
               </div>
               <p className="text-sm text-muted-foreground">
                 Early specialization in software development and programming.
@@ -311,12 +318,8 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Research Assistant</h4>
-                <p className="text-sm">
-                  Innovative Radiology AI Lab (iRAIL), Seoul National University
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Seoul, Korea • Jul. 2023 – Present
-                </p>
+                <p className="text-sm">Innovative Radiology AI Lab (iRAIL), Seoul National University</p>
+                <p className="text-sm text-muted-foreground">Seoul, Korea • Jul. 2023 – Present</p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Advisor:</strong> Chang Min Park, M.D., Ph.D.
@@ -329,12 +332,8 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Research Intern</h4>
-                <p className="text-sm">
-                  Computational Neuroimage Analysis (CNA) Lab, Hanyang University
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Seoul, Korea • Jan. 2023 – Jun. 2023
-                </p>
+                <p className="text-sm">Computational Neuroimage Analysis (CNA) Lab, Hanyang University</p>
+                <p className="text-sm text-muted-foreground">Seoul, Korea • Jan. 2023 – Jun. 2023</p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Advisor:</strong> Jong-Min Lee, Ph.D.
@@ -346,12 +345,8 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Research Intern</h4>
-                <p className="text-sm">
-                  Smart Ubiquitous Healthcare (SUH) Lab, Hanyang University
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Seoul, Korea • Jul. 2022 – Aug. 2022
-                </p>
+                <p className="text-sm">Smart Ubiquitous Healthcare (SUH) Lab, Hanyang University</p>
+                <p className="text-sm text-muted-foreground">Seoul, Korea • Jul. 2022 – Aug. 2022</p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Advisor:</strong> In Young Kim, M.D., Ph.D.
@@ -370,12 +365,8 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Android Developer</h4>
-                <p className="text-sm">
-                  Computational intelligence & Neural Engineering (CoNE) Lab
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Seoul, Korea • Aug. 2023 – Dec. 2023
-                </p>
+                <p className="text-sm">Computational intelligence & Neural Engineering (CoNE) Lab</p>
+                <p className="text-sm text-muted-foreground">Seoul, Korea • Aug. 2023 – Dec. 2023</p>
               </div>
               <p className="text-sm text-muted-foreground">
                 Development of an Android backend app utilizing biometric signals (i.e., EEG) for neural engineering
@@ -439,17 +430,19 @@ export default function MLResume() {
                   </div>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold mb-2">Key Achievements</h4>
-                  <ul className="space-y-1">
-                    {selectedProject.details.achievements.map((achievement, index) => (
-                      <li key={index} className="text-sm text-muted-foreground flex items-start">
-                        <span className="text-accent mr-2">•</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {selectedProject.details.achievements && selectedProject.details.achievements.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold mb-2">Key Achievements</h4>
+                    <ul className="space-y-1">
+                      {selectedProject.details.achievements.map((achievement, index) => (
+                        <li key={index} className="text-sm text-muted-foreground flex items-start">
+                          <span className="text-accent mr-2">•</span>
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {selectedProject.details.links && (
                   <div>
@@ -476,6 +469,14 @@ export default function MLResume() {
                           <a href={selectedProject.details.links.paper} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4 mr-2" />
                             Paper
+                          </a>
+                        </Button>
+                      )}
+                      {selectedProject.details.links.openreview && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={selectedProject.details.links.openreview} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            OpenReview
                           </a>
                         </Button>
                       )}
