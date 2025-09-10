@@ -121,7 +121,7 @@ export default function MLResume() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-primary-foreground">Gihun Cho</h1>
-              <p className="text-sm opacity-90 text-primary-foreground">Machine Learning Engineer</p>
+              <p className="text-sm opacity-90 text-primary-foreground">Machine Learning Engineer • Seoul, Korea</p>
             </div>
             <div className="flex space-x-3">
               <Button
@@ -187,39 +187,33 @@ export default function MLResume() {
         <section id="education">
           <h3 className="text-3xl font-bold mb-8">Education</h3>
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Master of Science in Bioengineering</CardTitle>
-                <CardDescription>Seoul National University • Mar. 2024 – Feb. 2026</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  GPA: 3.97/4.30. Research focus on medical AI and radiology report generation.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Bachelor of Science in Biomedical Engineering</CardTitle>
-                <CardDescription>Hanyang University • Mar. 2018 – Feb. 2024</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  GPA: 4.09/4.50. Strong foundation in biomedical engineering and machine learning.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Department of Software Development</CardTitle>
-                <CardDescription>Sunrin Internet Highschool • Mar. 2015 – Feb. 2018</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Early specialization in software development and programming.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">M.S. in Bioengineering</h4>
+                <p className="text-sm text-muted-foreground">Seoul National University • Mar. 2024 – Feb. 2026</p>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                GPA: 3.97/4.30. Research focus on medical AI and radiology report generation.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">B.S. in Biomedical Engineering</h4>
+                <p className="text-sm text-muted-foreground">Hanyang University • Mar. 2018 – Feb. 2024</p>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                GPA: 4.09/4.50. Strong foundation in biomedical engineering and machine learning.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">Department of Software Development</h4>
+                <p className="text-sm text-muted-foreground">Sunrin Internet Highschool • Mar. 2015 – Feb. 2018</p>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Early specialization in software development and programming.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -243,7 +237,7 @@ export default function MLResume() {
                   className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
                   onClick={() => toggleTag(tag)}
                 >
-                  {tag}
+                  #{tag}
                 </Badge>
               ))}
             </div>
@@ -263,7 +257,7 @@ export default function MLResume() {
             {filteredProjects.map((project) => (
               <Card
                 key={project.id}
-                className="cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                className="cursor-pointer hover:shadow-lg hover:border-accent transition-all duration-200 hover:scale-[1.02] border-2"
                 onClick={() => setSelectedProject(project)}
               >
                 <CardHeader>
@@ -288,48 +282,40 @@ export default function MLResume() {
         <section id="publications">
           <h3 className="text-3xl font-bold mb-8">Publications</h3>
           <div className="grid gap-6">
-            <Card>
-              <CardContent>
-                <h4 className="font-semibold mb-2">
-                  CREPE: Rapid Chest X-ray Report Evaluation by Predicting Multi-category Error Counts
-                </h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  G. Cho et al. • EMNLP 2025 Main (Poster), 1st author
-                </p>
-                <p className="text-sm">
-                  A lightweight, clinically-aware metric for evaluating machine-generated chest X-ray reports with 280x
-                  speed improvement.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <h4 className="font-semibold mb-2">
-                  Evaluating Open and Closed-Source Language and Vision-Language Models for Multicenter Image-Based
-                  Diagnosis in Radiology
-                </h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  G. Cho et al. • RSNA 2024 Cutting-Edge Research (Abstract), 1st author (equal contribution)
-                </p>
-                <p className="text-sm">
-                  Comparative study of LLM/VLM performance with multimodal clinical data and reader performance
-                  evaluation.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <h4 className="font-semibold mb-2">
-                  SeamXSim: Seamless-textured virtual colonoscopy simulator via unpaired long-term video translation
-                </h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Authors • Computers in Biology and Medicine 2025 (Under review), 2nd author
-                </p>
-                <p className="text-sm">
-                  Virtual colonoscopy simulation using advanced video translation techniques for medical training.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="border rounded-lg p-6">
+              <h4 className="font-semibold mb-2">
+                CREPE: Rapid Chest X-ray Report Evaluation by Predicting Multi-category Error Counts
+              </h4>
+              <p className="text-sm text-muted-foreground mb-2">G. Cho et al. • EMNLP 2025 Main (Poster), 1st author</p>
+              <p className="text-sm">
+                A lightweight, clinically-aware metric for evaluating machine-generated chest X-ray reports with 280x
+                speed improvement.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <h4 className="font-semibold mb-2">
+                Evaluating Open and Closed-Source Language and Vision-Language Models for Multicenter Image-Based
+                Diagnosis in Radiology
+              </h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                G. Cho et al. • RSNA 2024 Cutting-Edge Research (Abstract), 1st author (equal contribution)
+              </p>
+              <p className="text-sm">
+                Comparative study of LLM/VLM performance with multimodal clinical data and reader performance
+                evaluation.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <h4 className="font-semibold mb-2">
+                SeamXSim: Seamless-textured virtual colonoscopy simulator via unpaired long-term video translation
+              </h4>
+              <p className="text-sm text-muted-foreground mb-2">
+                Authors • Computers in Biology and Medicine 2025 (Under review), 2nd author
+              </p>
+              <p className="text-sm">
+                Virtual colonoscopy simulation using advanced video translation techniques for medical training.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -337,55 +323,49 @@ export default function MLResume() {
         <section id="research">
           <h3 className="text-3xl font-bold mb-8">Research Experience</h3>
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Research Assistant</CardTitle>
-                <CardDescription>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">Research Assistant</h4>
+                <p className="text-sm text-muted-foreground">
                   Innovative Radiology AI Lab (iRAIL), Seoul National University • Jul. 2023 – Present
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">
-                  <strong>Advisor:</strong> Chang Min Park, M.D., Ph.D.
                 </p>
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">
+                <strong>Advisor:</strong> Chang Min Park, M.D., Ph.D.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Clinical evaluation and benchmarks for medical LLM/VLMs. Focus on radiology report generation and
+                evaluation metrics.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">Research Intern</h4>
                 <p className="text-sm text-muted-foreground">
-                  Clinical evaluation and benchmarks for medical LLM/VLMs. Focus on radiology report generation and
-                  evaluation metrics.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Research Intern</CardTitle>
-                <CardDescription>
                   Computational Neuroimage Analysis (CNA) Lab, Hanyang University • Jan. 2023 – Jun. 2023
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">
-                  <strong>Advisor:</strong> Jong-Min Lee, Ph.D.
                 </p>
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">
+                <strong>Advisor:</strong> Jong-Min Lee, Ph.D.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                3D Brain MRI preprocessing & 2D Brain MRI modality classification using deep learning techniques.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">Research Intern</h4>
                 <p className="text-sm text-muted-foreground">
-                  3D Brain MRI preprocessing & 2D Brain MRI modality classification using deep learning techniques.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Research Intern</CardTitle>
-                <CardDescription>
                   Smart Ubiquitous Healthcare (SUH) Lab, Hanyang University • Jul. 2022 – Aug. 2022
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">
-                  <strong>Advisor:</strong> In Young Kim, M.D., Ph.D.
                 </p>
-                <p className="text-sm text-muted-foreground">
-                  Development of ECG, PPG signal monitor with peak detection algorithms for healthcare applications.
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">
+                <strong>Advisor:</strong> In Young Kim, M.D., Ph.D.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Development of ECG, PPG signal monitor with peak detection algorithms for healthcare applications.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -393,32 +373,28 @@ export default function MLResume() {
         <section id="career">
           <h3 className="text-3xl font-bold mb-8">Career</h3>
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Android Developer</CardTitle>
-                <CardDescription>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">Android Developer</h4>
+                <p className="text-sm text-muted-foreground">
                   Computational intelligence & Neural Engineering (CoNE) Lab • Aug. 2023 – Dec. 2023
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Development of an Android backend app utilizing biometric signals (i.e., EEG) for neural engineering
-                  applications.
                 </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Metaverse Platform Developer</CardTitle>
-                <CardDescription>Devmate Co., Ltd. • Dec. 2021 – Mar. 2022</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Development of metaverse maps in ZEPETO via Unity, creating immersive virtual environments and
-                  interactive experiences.
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Development of an Android backend app utilizing biometric signals (i.e., EEG) for neural engineering
+                applications.
+              </p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold">Metaverse Platform Developer</h4>
+                <p className="text-sm text-muted-foreground">Devmate Co., Ltd. • Dec. 2021 – Mar. 2022</p>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Development of metaverse maps in ZEPETO via Unity, creating immersive virtual environments and
+                interactive experiences.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -426,18 +402,14 @@ export default function MLResume() {
         <section id="awards">
           <h3 className="text-3xl font-bold mb-8">Awards</h3>
           <div className="grid gap-6">
-            <Card>
-              <CardContent>
-                <h4 className="font-semibold mb-2">Best Oral Presentation Award Bronze Prize</h4>
-                <p className="text-sm text-muted-foreground">2024 KoSAIM Annual Meeting • 2024</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <h4 className="font-semibold mb-2">Research Scholarship for Masters Studies</h4>
-                <p className="text-sm text-muted-foreground">National Research Foundation (NRF) • 2024</p>
-              </CardContent>
-            </Card>
+            <div className="border rounded-lg p-6">
+              <h4 className="font-semibold mb-2">Best Oral Presentation Award Bronze Prize</h4>
+              <p className="text-sm text-muted-foreground">2024 KoSAIM Annual Meeting • 2024</p>
+            </div>
+            <div className="border rounded-lg p-6">
+              <h4 className="font-semibold mb-2">Research Scholarship for Masters Studies</h4>
+              <p className="text-sm text-muted-foreground">National Research Foundation (NRF) • 2024</p>
+            </div>
           </div>
         </section>
       </div>
