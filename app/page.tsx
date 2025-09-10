@@ -37,11 +37,10 @@ const projects: Project[] = [
       achievements: [
         "Publication: EMNLP 2025 Main (Poster), 1st author",
         "Grant: 2024 Research Scholarship for Masters Studies (NRF)",
-        "280x faster than LLM-based metrics",
-        "Better alignment with radiologist error counts (τ=0.786)",
       ],
       links: {
         github: "https://github.com/gihuncho/crepe",
+        openreview: "https://openreview.net/forum?id=gjFuz5jbiJ",
       },
     },
   },
@@ -54,11 +53,6 @@ const projects: Project[] = [
       overview:
         "Unified pipeline to calculate commonly used metrics in RRG tasks. Allows easy evaluation with 9 different metrics using less than 10 lines of code.",
       technologies: ["Python", "PyTorch", "NLP", "Evaluation Metrics"],
-      achievements: [
-        "Unified pipeline for RRG evaluation",
-        "9 different metrics supported",
-        "Easy-to-use API with <10 lines of code",
-      ],
       links: {
         github: "https://github.com/gihuncho/rrg-metric",
       },
@@ -74,11 +68,6 @@ const projects: Project[] = [
       overview:
         "Comprehensive evaluation framework for Large Language Models and Vision-Language Models using multimodal clinical data including medical images, patient history, and clinical findings.",
       technologies: ["LLM", "VLM", "Multimodal AI", "Clinical Data", "Python"],
-      achievements: [
-        "Comprehensive multimodal evaluation framework",
-        "Clinical data integration",
-        "LLM/VLM performance benchmarking",
-      ],
     },
   },
 ]
@@ -121,7 +110,7 @@ export default function MLResume() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-primary-foreground">Gihun Cho</h1>
-              <p className="text-sm opacity-90 text-primary-foreground">Machine Learning Engineer • Seoul, Korea</p>
+              <p className="text-sm opacity-90 text-primary-foreground">Machine Learning Engineer</p>
             </div>
             <div className="flex space-x-3">
               <Button
@@ -163,8 +152,8 @@ export default function MLResume() {
       <section className="py-20 bg-gradient-to-br from-background to-muted/20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
-              Building AI Solutions for Medical Imaging
+            <h2 className="text-2xl md:text-6xl font-bold mb-6 text-balance">
+              Building AI Solutions for Medical Domain
             </h2>
             <p className="text-xl text-muted-foreground mb-8 text-pretty">
               Machine learning engineer specializing in medical AI, radiology report generation, and clinical evaluation
@@ -190,7 +179,7 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">M.S. in Bioengineering</h4>
-                <p className="text-sm text-muted-foreground">Seoul National University • Mar. 2024 – Feb. 2026</p>
+                <p className="text-sm text-muted-foreground">Seoul National University • Seoul, Korea • Mar. 2024 – Feb. 2026</p>
               </div>
               <p className="text-sm text-muted-foreground">
                 GPA: 3.97/4.30. Research focus on medical AI and radiology report generation.
@@ -199,7 +188,7 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">B.S. in Biomedical Engineering</h4>
-                <p className="text-sm text-muted-foreground">Hanyang University • Mar. 2018 – Feb. 2024</p>
+                <p className="text-sm text-muted-foreground">Hanyang University • Seoul, Korea • Mar. 2018 – Feb. 2024</p>
               </div>
               <p className="text-sm text-muted-foreground">
                 GPA: 4.09/4.50. Strong foundation in biomedical engineering and machine learning.
@@ -208,7 +197,7 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Department of Software Development</h4>
-                <p className="text-sm text-muted-foreground">Sunrin Internet Highschool • Mar. 2015 – Feb. 2018</p>
+                <p className="text-sm text-muted-foreground">Sunrin Internet Highschool • Seoul, Korea • Mar. 2015 – Feb. 2018</p>
               </div>
               <p className="text-sm text-muted-foreground">
                 Early specialization in software development and programming.
@@ -221,10 +210,6 @@ export default function MLResume() {
         <section id="projects">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-3xl font-bold">Projects</h3>
-            <div className="flex items-center space-x-2">
-              <Filter className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">Filter by tags</span>
-            </div>
           </div>
 
           {/* Tag Filter */}
@@ -286,7 +271,7 @@ export default function MLResume() {
               <h4 className="font-semibold mb-2">
                 CREPE: Rapid Chest X-ray Report Evaluation by Predicting Multi-category Error Counts
               </h4>
-              <p className="text-sm text-muted-foreground mb-2">G. Cho et al. • EMNLP 2025 Main (Poster), 1st author</p>
+              <p className="text-sm text-muted-foreground mb-2">EMNLP 2025 Main (Poster), 1st author</p>
               <p className="text-sm">
                 A lightweight, clinically-aware metric for evaluating machine-generated chest X-ray reports with 280x
                 speed improvement.
@@ -298,7 +283,7 @@ export default function MLResume() {
                 Diagnosis in Radiology
               </h4>
               <p className="text-sm text-muted-foreground mb-2">
-                G. Cho et al. • RSNA 2024 Cutting-Edge Research (Abstract), 1st author (equal contribution)
+                RSNA 2024 Cutting-Edge Research (Abstract), 1st author (equal contribution)
               </p>
               <p className="text-sm">
                 Comparative study of LLM/VLM performance with multimodal clinical data and reader performance
@@ -310,7 +295,7 @@ export default function MLResume() {
                 SeamXSim: Seamless-textured virtual colonoscopy simulator via unpaired long-term video translation
               </h4>
               <p className="text-sm text-muted-foreground mb-2">
-                Authors • Computers in Biology and Medicine 2025 (Under review), 2nd author
+                Computers in Biology and Medicine 2025 (Under review), 2nd author
               </p>
               <p className="text-sm">
                 Virtual colonoscopy simulation using advanced video translation techniques for medical training.
@@ -326,8 +311,11 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Research Assistant</h4>
+                <p className="text-sm">
+                  Innovative Radiology AI Lab (iRAIL), Seoul National University
+                </p>
                 <p className="text-sm text-muted-foreground">
-                  Innovative Radiology AI Lab (iRAIL), Seoul National University • Jul. 2023 – Present
+                  Seoul, Korea • Jul. 2023 – Present
                 </p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
@@ -341,8 +329,11 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Research Intern</h4>
+                <p className="text-sm">
+                  Computational Neuroimage Analysis (CNA) Lab, Hanyang University
+                </p>
                 <p className="text-sm text-muted-foreground">
-                  Computational Neuroimage Analysis (CNA) Lab, Hanyang University • Jan. 2023 – Jun. 2023
+                  Seoul, Korea • Jan. 2023 – Jun. 2023
                 </p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
@@ -355,8 +346,11 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Research Intern</h4>
+                <p className="text-sm">
+                  Smart Ubiquitous Healthcare (SUH) Lab, Hanyang University
+                </p>
                 <p className="text-sm text-muted-foreground">
-                  Smart Ubiquitous Healthcare (SUH) Lab, Hanyang University • Jul. 2022 – Aug. 2022
+                  Seoul, Korea • Jul. 2022 – Aug. 2022
                 </p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
@@ -376,8 +370,11 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Android Developer</h4>
+                <p className="text-sm">
+                  Computational intelligence & Neural Engineering (CoNE) Lab
+                </p>
                 <p className="text-sm text-muted-foreground">
-                  Computational intelligence & Neural Engineering (CoNE) Lab • Aug. 2023 – Dec. 2023
+                  Seoul, Korea • Aug. 2023 – Dec. 2023
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -388,7 +385,8 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Metaverse Platform Developer</h4>
-                <p className="text-sm text-muted-foreground">Devmate Co., Ltd. • Dec. 2021 – Mar. 2022</p>
+                <p className="text-sm">Devmate Co., Ltd.</p>
+                <p className="text-sm text-muted-foreground">Seoul, Korea • Dec. 2021 – Mar. 2022</p>
               </div>
               <p className="text-sm text-muted-foreground">
                 Development of metaverse maps in ZEPETO via Unity, creating immersive virtual environments and
