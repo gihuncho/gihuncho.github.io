@@ -30,11 +30,11 @@ const projects: Project[] = [
     id: "1",
     name: "CREPE",
     description: "A lightweight, clinically-aware metric for the evaluation of machine-generated chest X-ray reports",
-    tags: ["eval_metric", "github", "published", "EMNLP2025"],
+    tags: ["evaluation", "metric", "github", "published", "EMNLP2025"],
     details: {
       overview:
         "Evaluating machine-generated chest X-ray report via report error count regression. Finetuned BERT with 6-error-category MLP regression heads; Trained with 32K synthetic report pairs generated via commercial LLM. 280x faster than LLM-based metrics with better alignment with radiologist error counts (τ=0.786).",
-      technologies: ["BERT", "PyTorch", "Python", "MLP", "NLP"],
+      technologies: ["Python", "PyTorch", "huggingface", "transformers"],
       achievements: [
         "Publication: EMNLP 2025 Main (Poster), 1st author",
         "Grant: 2024 Research Scholarship for Masters Studies (NRF)",
@@ -49,11 +49,11 @@ const projects: Project[] = [
     id: "2",
     name: "rrg-metric",
     description: "A GitHub repository for evaluating Radiology Report Generation (RRG) with multiple metrics",
-    tags: ["eval_metric", "github"],
+    tags: ["evaluation", "metric", "github"],
     details: {
       overview:
         "Unified pipeline to calculate commonly used metrics in RRG tasks. Allows easy evaluation with 9 different metrics using less than 10 lines of code.",
-      technologies: ["Python", "PyTorch", "NLP", "Evaluation Metrics"],
+      technologies: ["Python", "PyTorch", "huggingface", "transformers", "pandas"],
       links: {
         github: "https://github.com/gihuncho/rrg-metric",
       },
@@ -63,12 +63,15 @@ const projects: Project[] = [
     id: "3",
     name: "Multimodal DDx",
     description:
-      "Evaluation of various LLM/VLMs with multimodal clinical data (e.g., images, patient history, findings)",
+      "Evaluation of various LLM/VLMs with multimodal clinical data (e.g., images, patient history, findings text)",
     tags: ["evaluation"],
     details: {
       overview:
         "Comprehensive evaluation framework for Large Language Models and Vision-Language Models using multimodal clinical data including medical images, patient history, and clinical findings.",
-      technologies: ["LLM", "VLM", "Multimodal AI", "Clinical Data", "Python"],
+      technologies: ["Python", "PyTorch", "huggingface", "transformers", "PEFT"],
+      achievements: [
+        "Presentation: RSNA 2024 Cutting-Edge Research (Abstract), 1st author (equal contribution)",
+      ],
     },
   },
 ]
@@ -153,17 +156,17 @@ export default function MLResume() {
       <section className="py-20 bg-gradient-to-br from-background to-muted/20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-6xl font-bold mb-6 text-balance">
+            {/* <h2 className="text-2xl md:text-6xl font-bold mb-6 text-balance">
               Building AI Solutions for Medical Domain
-            </h2>
+            </h2> */}
             <p className="text-xl text-muted-foreground mb-8 text-pretty">
               Machine learning engineer specializing in medical AI, radiology report generation, and clinical evaluation
               metrics. Currently pursuing M.S. in Bioengineering at Seoul National University.
             </p>
             <div className="flex justify-center space-x-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90" asChild>
+              {/* <Button size="lg" className="bg-accent hover:bg-accent/90" asChild>
                 <a href="#projects">View My Work</a>
-              </Button>
+              </Button> */}
               <Button size="lg" variant="outline" asChild>
                 <a href="mailto:gihuncho@snu.ac.kr">Contact Me</a>
               </Button>
@@ -185,7 +188,7 @@ export default function MLResume() {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                GPA: 3.97/4.30. Research focus on medical AI and radiology report generation.
+                GPA: 3.97/4.30
               </p>
             </div>
             <div className="border rounded-lg p-6">
@@ -196,7 +199,7 @@ export default function MLResume() {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                GPA: 4.09/4.50. Strong foundation in biomedical engineering and machine learning.
+                GPA: 4.09/4.50
               </p>
             </div>
             <div className="border rounded-lg p-6">
@@ -207,7 +210,7 @@ export default function MLResume() {
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                Early specialization in software development and programming.
+                17th President of Web Development Club "IWOP"
               </p>
             </div>
           </div>
@@ -317,42 +320,39 @@ export default function MLResume() {
           <div className="space-y-6">
             <div className="border rounded-lg p-6">
               <div className="mb-4">
-                <h4 className="text-lg font-semibold">Research Assistant</h4>
-                <p className="text-sm">Innovative Radiology AI Lab (iRAIL), Seoul National University</p>
-                <p className="text-sm text-muted-foreground">Seoul, Korea • Jul. 2023 – Present</p>
+                <h4 className="text-lg font-semibold">Innovative Radiology AI Lab. (iRAIL)</h4>
+                <p className="text-sm text-muted-foreground">Seoul National University • Seoul, Korea • Jul. 2023 – Present</p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Advisor:</strong> Chang Min Park, M.D., Ph.D.
               </p>
               <p className="text-sm text-muted-foreground">
-                Clinical evaluation and benchmarks for medical LLM/VLMs. Focus on radiology report generation and
+                Master's student. Clinical evaluation and benchmarks for medical LLM/VLMs. Focus on radiology report generation and
                 evaluation metrics.
               </p>
             </div>
             <div className="border rounded-lg p-6">
               <div className="mb-4">
-                <h4 className="text-lg font-semibold">Research Intern</h4>
-                <p className="text-sm">Computational Neuroimage Analysis (CNA) Lab, Hanyang University</p>
-                <p className="text-sm text-muted-foreground">Seoul, Korea • Jan. 2023 – Jun. 2023</p>
+                <h4 className="text-lg font-semibold">Computational Neuroimage Analysis (CNA) Lab</h4>
+                <p className="text-sm text-muted-foreground">Hanyang University • Seoul, Korea • Jan. 2023 – Jun. 2023</p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Advisor:</strong> Jong-Min Lee, Ph.D.
               </p>
               <p className="text-sm text-muted-foreground">
-                3D Brain MRI preprocessing & 2D Brain MRI modality classification using deep learning techniques.
+                Research intern. 3D Brain MRI preprocessing & 2D Brain MRI modality classification using modified ResNet.
               </p>
             </div>
             <div className="border rounded-lg p-6">
               <div className="mb-4">
-                <h4 className="text-lg font-semibold">Research Intern</h4>
-                <p className="text-sm">Smart Ubiquitous Healthcare (SUH) Lab, Hanyang University</p>
-                <p className="text-sm text-muted-foreground">Seoul, Korea • Jul. 2022 – Aug. 2022</p>
+                <h4 className="text-lg font-semibold">Smart Ubiquitous Healthcare (SUH) Lab.</h4>
+                <p className="text-sm text-muted-foreground">Hanyang University • Seoul, Korea • Jul. 2022 – Aug. 2022</p>
               </div>
               <p className="text-sm text-muted-foreground mb-2">
                 <strong>Advisor:</strong> In Young Kim, M.D., Ph.D.
               </p>
               <p className="text-sm text-muted-foreground">
-                Development of ECG, PPG signal monitor with peak detection algorithms for healthcare applications.
+                Research intern. Development of ECG, PPG signal monitor with peak detection algorithms for healthcare applications.
               </p>
             </div>
           </div>
@@ -365,7 +365,7 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Android Developer</h4>
-                <p className="text-sm">Computational intelligence & Neural Engineering (CoNE) Lab</p>
+                <p className="text-sm font-medium">Computational intelligence & Neural Engineering (CoNE) Lab.</p>
                 <p className="text-sm text-muted-foreground">Seoul, Korea • Aug. 2023 – Dec. 2023</p>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -376,7 +376,7 @@ export default function MLResume() {
             <div className="border rounded-lg p-6">
               <div className="mb-4">
                 <h4 className="text-lg font-semibold">Metaverse Platform Developer</h4>
-                <p className="text-sm">Devmate Co., Ltd.</p>
+                <p className="text-sm font-medium">Devmate Co., Ltd.</p>
                 <p className="text-sm text-muted-foreground">Seoul, Korea • Dec. 2021 – Mar. 2022</p>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -492,7 +492,7 @@ export default function MLResume() {
       {/* Footer */}
       <footer className="bg-muted/30 py-12 mt-20">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">© 2024 Gihun Cho. Built with Next.js and deployed on GitHub Pages.</p>
+          <p className="text-muted-foreground">© 2025 Gihun Cho. Built with Next.js and deployed on GitHub Pages.</p>
         </div>
       </footer>
     </div>
