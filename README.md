@@ -19,7 +19,7 @@ print` falls back to ink on paper.
 Two faces, split by what the reader does with the text. Reference data — the
 name, section labels, titles, dates, author lists, journal names — is set in
 JetBrains Mono, because that is the material the theme is about. Running
-prose is IBM Plex Sans on a narrower measure, because a uniform advance width
+prose is Inter on a narrower measure, because a uniform advance width
 stops words forming recognisable shapes over a paragraph.
 
 ## Editing
