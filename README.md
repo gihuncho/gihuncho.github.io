@@ -2,7 +2,7 @@
 
 Personal site — <https://gihuncho.github.io>
 
-Two files: `index.html` and `style.css`, plus four woff2 faces in `fonts/`.
+Two files: `index.html` and `style.css`, plus five woff2 faces in `fonts/`.
 No build step, no dependencies, no JavaScript, and no external requests —
 the fonts are served from this repository.
 
