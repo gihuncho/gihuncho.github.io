@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gihun Cho</title>
-<meta name="description" content="Gihun Cho — research engineer at MOTIF Tech, working on post-training and evaluation for large language models.">
+<meta name="description" content="Gihun Cho — AI research engineer at Motif Technologies, working on post-training and evaluation for large language models.">
 <meta name="author" content="Gihun Cho">
 <link rel="canonical" href="https://gihuncho.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='24' text-anchor='middle' fill='%23222'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Gihun Cho">
-<meta property="og:description" content="Research engineer at MOTIF Tech, working on post-training and evaluation for large language models.">
+<meta property="og:description" content="AI research engineer at Motif Technologies, working on post-training and evaluation for large language models.">
 <meta property="og:url" content="https://gihuncho.github.io/">
 </head>
 <body>
@@ -20,12 +20,10 @@
 
   <header class="masthead">
     <h1>Gihun Cho</h1>
-    <p class="role">Research Engineer, <span class="org">MOTIF Tech</span></p>
+    <p class="role">AI Research Engineer, <span class="org">Motif Technologies</span></p>
     <p class="bio">
-      I work on post-training for large language models: reinforcement learning on agentic
-      tasks, benchmark design, and supervised fine-tuning data pipelines. Before this, an
-      M.S. at Seoul National University on evaluation metrics for radiology report
-      generation.
+      I work on post-training for large language models. Before this, an M.S. at Seoul
+      National University on evaluation metrics for radiology report generation.
     </p>
     <ul class="contact">
       <li><a href="https://github.com/gihuncho">GitHub</a></li>
@@ -36,66 +34,16 @@
   </header>
 
   <section>
-    <h2>Publications</h2>
-
-    <article class="pub">
-      <h3>CREPE: Rapid Chest X-ray Report Evaluation by Predicting Multi-category Error Counts</h3>
-      <p class="authors"><b>Gihun Cho</b>, Seunghyun Jang, Hanbin Ko, Inhyeok Baek, Chang Min Park</p>
-      <p class="venue"><i>Proceedings of EMNLP 2025</i>, Main Conference (poster). Suzhou, China.</p>
-      <p class="note">
-        Six radiology-specific error categories, each regressed by its own head on a
-        BiomedBERT encoder and summed into one score. Trained on 32k synthetic report
-        pairs; agrees with radiologists on ReXVal at <span class="num">&tau;&nbsp;=&nbsp;0.786</span>
-        while running in <span class="num">9.5&nbsp;ms</span> per pair — roughly
-        <span class="num">280&times;</span> faster than an LLM judge.
-      </p>
-      <p class="refs">
-        <a href="https://aclanthology.org/2025.emnlp-main.1102/">ACL&nbsp;Anthology</a>
-        <a href="https://openreview.net/forum?id=gjFuz5jbiJ">OpenReview</a>
-        <a href="https://gihuncho.github.io/crepe/">Project&nbsp;page</a>
-        <a href="https://github.com/gihuncho/crepe">Code</a>
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>SeamXSim: Seamless-textured virtual colonoscopy simulator via unpaired long-term video translation</h3>
-      <p class="authors">Seunghyun Jang, Dongheon Lee, Yisak Kim, <b>Gihun Cho</b>, Kwang Woo Kim,
-        Sihyun Kim, Jong Pil Im, Byeong Gwan Kim, Chang Min Park</p>
-      <p class="venue"><i>Computers in Biology and Medicine</i> <span class="num">198</span>, 111217 (2025).</p>
-      <p class="note">
-        Seamless colon textures synthesized from a single exemplar by inpainting and
-        outpainting, then carried through an unpaired video translation stage to produce
-        long-term colonoscopic sequences from simulation.
-      </p>
-      <p class="refs">
-        <a href="https://doi.org/10.1016/j.compbiomed.2025.111217">DOI</a>
-        <a href="https://pubmed.ncbi.nlm.nih.gov/41151506/">PubMed</a>
-      </p>
-    </article>
-
-    <article class="pub">
-      <h3>Evaluating Open and Closed-Source Language and Vision-Language Models for Multicenter Image-Based Diagnosis in Radiology</h3>
-      <p class="venue"><i>RSNA 2024</i>, Cutting-Edge Research (abstract). Chicago, USA.
-        First author, equal contribution.</p>
-      <p class="note">
-        How far open-weight models had closed the gap with commercial ones on differential
-        diagnosis, given images, patient history and findings text together, measured
-        against reader performance across multiple centers.
-      </p>
-    </article>
-  </section>
-
-  <section>
     <h2>Experience</h2>
 
     <article class="entry">
       <div class="head">
         <span class="when">2026 &mdash;</span>
-        <h3>Research Engineer, <span class="org">MOTIF Tech</span></h3>
+        <h3>AI Research Engineer, <span class="org">Motif Technologies</span></h3>
       </div>
       <p class="note">
-        MAIR group, LLM team. Reinforcement learning for agentic tasks, evaluation and
-        benchmark design, and supervised fine-tuning data pipelines.
+        Reinforcement learning for agentic tasks, evaluation and benchmark design, and
+        supervised fine-tuning data pipelines.
       </p>
     </article>
 
@@ -150,6 +98,71 @@
       </div>
       <p class="note">
         Interactive ZEPETO worlds built in Unity.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+
+    <article class="pub">
+      <h3>CREPE: Rapid Chest X-ray Report Evaluation by Predicting Multi-category Error Counts</h3>
+      <p class="authors"><b>Gihun Cho</b>, Seunghyun Jang, Hanbin Ko, Inhyeok Baek, Chang Min Park</p>
+      <p class="venue"><i>Proceedings of EMNLP 2025</i>, Main Conference (poster). Suzhou, China.</p>
+      <p class="note">
+        Six radiology-specific error categories, each regressed by its own head on a
+        BiomedBERT encoder and summed into one score. Trained on 32k synthetic report
+        pairs; agrees with radiologists on ReXVal at <span class="num">&tau;&nbsp;=&nbsp;0.786</span>
+        while running in <span class="num">9.5&nbsp;ms</span> per pair — roughly
+        <span class="num">280&times;</span> faster than an LLM judge.
+      </p>
+      <p class="refs">
+        <a href="https://aclanthology.org/2025.emnlp-main.1102/">ACL&nbsp;Anthology</a>
+        <a href="https://openreview.net/forum?id=gjFuz5jbiJ">OpenReview</a>
+        <a href="https://gihuncho.github.io/crepe/">Project&nbsp;page</a>
+        <a href="https://github.com/gihuncho/crepe">Code</a>
+      </p>
+    </article>
+
+    <article class="pub">
+      <h3>Exploring the Capabilities of Large Language Model Encoders for Image-Text Retrieval in Chest X-rays</h3>
+      <p class="authors">Hanbin Ko, <b>Gihun Cho</b>, Inhyeok Baek, Donguk Kim, Joonbeom Koo,
+        Changi Kim, Dongheon Lee, Chang Min Park</p>
+      <p class="venue">Preprint, under review (2026).</p>
+      <p class="note">
+        LLM2VEC4CXR, an LLM encoder adapted to chest X-ray reports, and LLM2CLIP4CXR, the
+        dual-tower framework built on it. Tests whether an LLM encoder holds up as a
+        clinical representation across report styles.
+      </p>
+      <p class="refs">
+        <a href="https://arxiv.org/abs/2509.15234">arXiv</a>
+      </p>
+    </article>
+
+    <article class="pub">
+      <h3>SeamXSim: Seamless-textured virtual colonoscopy simulator via unpaired long-term video translation</h3>
+      <p class="authors">Seunghyun Jang, Dongheon Lee, Yisak Kim, <b>Gihun Cho</b>, Kwang Woo Kim,
+        Sihyun Kim, Jong Pil Im, Byeong Gwan Kim, Chang Min Park</p>
+      <p class="venue"><i>Computers in Biology and Medicine</i> <span class="num">198</span>, 111217 (2025).</p>
+      <p class="note">
+        Seamless colon textures synthesized from a single exemplar by inpainting and
+        outpainting, then carried through an unpaired video translation stage to produce
+        long-term colonoscopic sequences from simulation.
+      </p>
+      <p class="refs">
+        <a href="https://doi.org/10.1016/j.compbiomed.2025.111217">DOI</a>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41151506/">PubMed</a>
+      </p>
+    </article>
+
+    <article class="pub">
+      <h3>Evaluating Open and Closed-Source Language and Vision-Language Models for Multicenter Image-Based Diagnosis in Radiology</h3>
+      <p class="venue"><i>RSNA 2024</i>, Cutting-Edge Research (abstract). Chicago, USA.
+        First author, equal contribution.</p>
+      <p class="note">
+        How far open-weight models had closed the gap with commercial ones on differential
+        diagnosis, given images, patient history and findings text together, measured
+        against reader performance across multiple centers.
       </p>
     </article>
   </section>
