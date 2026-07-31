@@ -8,12 +8,12 @@ the fonts are served from this repository.
 
 ## Look
 
-Monokai Pro on its darker ground (`#221f22`), set in JetBrains Mono. The page
-is coloured as if it were a source file: the name is a function, titles are
-types, organisations and journals are strings, dates and figures are numeric
-literals, links are keywords, metadata is a comment. Italics appear only
-where the theme and the citation style agree — comments and journal names.
-Dark only; `@media print` falls back to ink on paper.
+Monokai Pro on its darker ground (`#221f22`), set in JetBrains Mono. Hue is
+spent only where greyscale cannot do the job: one green for the name, one
+pink for links. Title, prose, author list, date and comment are separated by
+the theme's neutral ramp instead. Italics appear only where the theme and the
+citation style agree — section labels (comments) and journal names. Dark
+only; `@media print` falls back to ink on paper.
 
 ## Editing
 

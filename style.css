@@ -1,11 +1,11 @@
 /* ---------------------------------------------------------------------------
    gihuncho.github.io — single stylesheet, no build step, no external requests.
 
-   Monokai Pro on its darker ground, set in JetBrains Mono. The page is treated
-   as a source file: names read as functions, titles as types, organisations as
-   strings, dates and figures as numeric literals, links as keywords, and
-   metadata as comments. Italics go where the theme and the citation style
-   agree on them — comments and journal names.
+   Monokai Pro on its darker ground, set in JetBrains Mono. Hue is spent only
+   where greyscale cannot do the job — one green for the name, one pink for
+   links. Every other distinction (title, prose, author list, date, comment)
+   is carried by the theme's neutral ramp. Italics go where the theme and the
+   citation style agree on them — comments and journal names.
    --------------------------------------------------------------------------- */
 
 @font-face {
@@ -38,10 +38,7 @@
   --muted:  #939293;   /* author lists */
   --dim:    #727072;   /* comments, venues */
 
-  --green:  #a9dc76;   /* the name */
-  --blue:   #78dce8;   /* titles */
-  --yellow: #ffd866;   /* organisations, journals */
-  --purple: #ab9df2;   /* dates and figures */
+  --green:  #a9dc76;   /* the name, and nothing else */
   --red:    #ff6188;   /* links */
   --orange: #fc9867;   /* links, hovered */
 
@@ -66,7 +63,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: rgba(171, 157, 242, 0.3); }
+::selection { background: rgba(255, 97, 136, 0.28); }
 
 main {
   max-width: calc(var(--measure) + 3rem);
@@ -87,7 +84,7 @@ a {
 a:hover { color: var(--orange); }
 
 a:focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 2px solid var(--orange);
   outline-offset: 2px;
   border-radius: 1px;
 }
@@ -109,7 +106,7 @@ a:focus-visible {
   color: var(--soft);
 }
 
-.masthead .role .org { color: var(--yellow); }
+.masthead .role .org { color: var(--muted); }
 
 .bio {
   margin: 1.5rem 0 0;
@@ -167,24 +164,21 @@ section > h2::before { content: "// "; }
   font-size: 1em;
   font-weight: 600;
   line-height: 1.45;
-  color: var(--blue);
+  color: var(--ink);
   text-wrap: pretty;
 }
 
 .head h3 .org {
   font-weight: 400;
-  color: var(--yellow);
+  color: var(--muted);
 }
-
-.head h3 a { color: var(--blue); }
-.head h3 a:hover { color: var(--orange); }
 
 .when {
   float: right;
   margin-left: 1.25rem;
   font-size: 0.82em;
   line-height: 1.78;
-  color: var(--purple);
+  color: var(--dim);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -205,7 +199,7 @@ section > h2::before { content: "// "; }
   font-size: 1em;
   font-weight: 600;
   line-height: 1.45;
-  color: var(--blue);
+  color: var(--ink);
   text-wrap: pretty;
 }
 
@@ -225,16 +219,13 @@ section > h2::before { content: "// "; }
 .pub .venue { margin-top: 0.12rem; color: var(--dim); }
 .pub h3 + .venue { margin-top: 0.32rem; }   /* no author list above it */
 
-/* journal and conference names: italic by citation convention, string-coloured */
+/* journal and conference names: italic by citation convention */
 .pub .venue i {
   font-style: italic;
-  color: var(--yellow);
+  color: var(--muted);
 }
 
-.num {
-  color: var(--purple);
-  font-variant-numeric: tabular-nums;
-}
+.num { font-variant-numeric: tabular-nums; }
 
 .refs {
   margin: 0.6rem 0 0;
@@ -300,9 +291,6 @@ footer p { margin: 0; }
     --dim: #555;
     --rule: #bbb;
     --green: #000;
-    --blue: #000;
-    --yellow: #000;
-    --purple: #333;
     --red: #000;
     --orange: #000;
   }
