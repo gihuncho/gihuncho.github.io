@@ -8,12 +8,13 @@ the fonts are served from this repository.
 
 ## Look
 
-Monokai Pro on its darker ground (`#221f22`), set in JetBrains Mono. Hue is
-spent only where greyscale cannot do the job: one green for the name, one
-pink for links. Title, prose, author list, date and comment are separated by
-the theme's neutral ramp instead. Italics appear only where the theme and the
-citation style agree — section labels (comments) and journal names. Dark
-only; `@media print` falls back to ink on paper.
+Monokai Dimmed (`#1e1e1e`), set in JetBrains Mono. Hue is spent only where
+greyscale cannot do the job: the theme's function orange for the name, its
+numeric blue for links. Title, prose, author list, date and comment are
+separated by the neutral ramp instead, whose middle step is the theme's own
+editor foreground. Italics appear only where the theme and the citation style
+agree — section labels (comments) and journal names. Dark only; `@media
+print` falls back to ink on paper.
 
 ## Editing
 

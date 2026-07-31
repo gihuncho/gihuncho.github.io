@@ -1,11 +1,12 @@
 /* ---------------------------------------------------------------------------
    gihuncho.github.io — single stylesheet, no build step, no external requests.
 
-   Monokai Pro on its darker ground, set in JetBrains Mono. Hue is spent only
-   where greyscale cannot do the job — one green for the name, one pink for
-   links. Every other distinction (title, prose, author list, date, comment)
-   is carried by the theme's neutral ramp. Italics go where the theme and the
-   citation style agree on them — comments and journal names.
+   Monokai Dimmed, set in JetBrains Mono. Hue is spent only where greyscale
+   cannot do the job — the theme's function orange for the name, its numeric
+   blue for links. Every other distinction (title, prose, author list, date,
+   comment) is carried by the neutral ramp, whose middle step is the theme's
+   own editor foreground. Italics go where the theme and the citation style
+   agree on them — comments and journal names.
    --------------------------------------------------------------------------- */
 
 @font-face {
@@ -31,16 +32,16 @@
 }
 
 :root {
-  --ground: #221f22;   /* the darker of Monokai Pro's two grounds */
-  --rule:   #403e41;
-  --ink:    #fcfcfa;
-  --soft:   #d6d5d6;   /* body prose */
-  --muted:  #939293;   /* author lists */
-  --dim:    #727072;   /* comments, venues */
+  --ground: #1e1e1e;   /* editor.background */
+  --rule:   #3b3b38;
+  --ink:    #e2e4e1;   /* headings */
+  --soft:   #c5c8c6;   /* body prose — editor.foreground */
+  --muted:  #9a9b99;   /* author lists, organisations — comment */
+  --dim:    #8a8b89;   /* section labels, venues, dates */
 
-  --green:  #a9dc76;   /* the name, and nothing else */
-  --red:    #ff6188;   /* links */
-  --orange: #fc9867;   /* links, hovered */
+  --name:   #ce6700;   /* entity.name.function, and nothing else */
+  --link:   #6089b4;   /* constant.numeric */
+  --link-hi:#82a6cc;
 
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
@@ -63,7 +64,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: rgba(255, 97, 136, 0.28); }
+::selection { background: rgba(103, 107, 113, 0.5); }   /* editor.selectionBackground */
 
 main {
   max-width: calc(var(--measure) + 3rem);
@@ -74,17 +75,17 @@ main {
 /* --- links ---------------------------------------------------------------- */
 
 a {
-  color: var(--red);
+  color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 0.055em;
   text-underline-offset: 0.18em;
   transition: color 90ms linear;
 }
 
-a:hover { color: var(--orange); }
+a:hover { color: var(--link-hi); }
 
 a:focus-visible {
-  outline: 2px solid var(--orange);
+  outline: 2px solid var(--link-hi);
   outline-offset: 2px;
   border-radius: 1px;
 }
@@ -97,7 +98,7 @@ a:focus-visible {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--green);
+  color: var(--name);
 }
 
 .masthead .role {
@@ -290,9 +291,9 @@ footer p { margin: 0; }
     --muted: #444;
     --dim: #555;
     --rule: #bbb;
-    --green: #000;
-    --red: #000;
-    --orange: #000;
+    --name: #000;
+    --link: #000;
+    --link-hi: #000;
   }
 
   @page { margin: 18mm 16mm; }
