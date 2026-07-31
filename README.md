@@ -40,6 +40,8 @@ To preview, open the file in a browser, or serve it:
 python3 -m http.server
 ```
 
+See [CHANGELOG.md](CHANGELOG.md) for what changed in the 2026-07 rewrite.
+
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the
