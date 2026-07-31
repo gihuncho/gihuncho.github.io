@@ -2,8 +2,18 @@
 
 Personal site — <https://gihuncho.github.io>
 
-Two files: `index.html` and `style.css`. No build step, no dependencies, no
-JavaScript, no external requests (fonts resolve from the system stack).
+Two files: `index.html` and `style.css`, plus three woff2 faces in `fonts/`.
+No build step, no dependencies, no JavaScript, and no external requests —
+the fonts are served from this repository.
+
+## Look
+
+Monokai Pro on its darker ground (`#221f22`), set in JetBrains Mono. The page
+is coloured as if it were a source file: the name is a function, titles are
+types, organisations and journals are strings, dates and figures are numeric
+literals, links are keywords, metadata is a comment. Italics appear only
+where the theme and the citation style agree — comments and journal names.
+Dark only; `@media print` falls back to ink on paper.
 
 ## Editing
 

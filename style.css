@@ -1,83 +1,93 @@
 /* ---------------------------------------------------------------------------
    gihuncho.github.io — single stylesheet, no build step, no external requests.
-   Layout: one prose column; on wide screens section labels sit in the margin.
+
+   Monokai Pro on its darker ground, set in JetBrains Mono. The page is treated
+   as a source file: names read as functions, titles as types, organisations as
+   strings, dates and figures as numeric literals, links as keywords, and
+   metadata as comments. Italics go where the theme and the citation style
+   agree on them — comments and journal names.
    --------------------------------------------------------------------------- */
 
-:root {
-  --paper:  #fbfaf7;
-  --ink:    #1d1c19;
-  --soft:   #46443e;   /* body prose, one step down from headings */
-  --muted:  #736f67;   /* dates, venues, metadata */
-  --rule:   #e0dcd3;
-  --accent: #8c3a2b;   /* links, underlines */
-
-  --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text",
-           Georgia, "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-          "Helvetica Neue", Arial, sans-serif;
-
-  --measure: 34rem;   /* prose column */
-  --label:   7.5rem;  /* margin column holding section labels */
-  --gutter:  2.75rem;
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/JetBrainsMono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/JetBrainsMono-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/JetBrainsMono-600.woff2") format("woff2");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper:  #151412;
-    --ink:    #e8e4db;
-    --soft:   #c2bdb2;
-    --muted:  #8d887e;
-    --rule:   #302e29;
-    --accent: #d1866c;
-  }
+:root {
+  --ground: #221f22;   /* the darker of Monokai Pro's two grounds */
+  --rule:   #403e41;
+  --ink:    #fcfcfa;
+  --soft:   #d6d5d6;   /* body prose */
+  --muted:  #939293;   /* author lists */
+  --dim:    #727072;   /* comments, venues */
+
+  --green:  #a9dc76;   /* the name */
+  --blue:   #78dce8;   /* titles */
+  --yellow: #ffd866;   /* organisations, journals */
+  --purple: #ab9df2;   /* dates and figures */
+  --red:    #ff6188;   /* links */
+  --orange: #fc9867;   /* links, hovered */
+
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --measure: 40rem;   /* ~66 characters at this advance width */
+  --label:    8.5rem; /* margin column holding section labels */
+  --gutter:   3rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html {
-  -webkit-text-size-adjust: 100%;
-}
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--ground);
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 1.0625rem;
+  font-family: var(--mono);
+  font-size: 1rem;
   line-height: 1.6;
-  font-variant-numeric: oldstyle-num proportional-nums;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
-::selection {
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
-}
+::selection { background: rgba(171, 157, 242, 0.3); }
 
 main {
   max-width: calc(var(--measure) + 3rem);
   margin: 0 auto;
-  padding: 4.5rem 1.5rem 5rem;
+  padding: 4rem 1.5rem 5rem;
 }
 
 /* --- links ---------------------------------------------------------------- */
 
 a {
-  color: inherit;
+  color: var(--red);
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
   text-decoration-thickness: 0.055em;
-  text-underline-offset: 0.16em;
-  transition: color 90ms linear, text-decoration-color 90ms linear;
+  text-underline-offset: 0.18em;
+  transition: color 90ms linear;
 }
 
-a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-}
+a:hover { color: var(--orange); }
 
 a:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
   border-radius: 1px;
 }
@@ -86,41 +96,39 @@ a:focus-visible {
 
 .masthead h1 {
   margin: 0;
-  font-size: 2.05rem;
+  font-size: 1.9em;
   font-weight: 600;
-  letter-spacing: -0.018em;
-  line-height: 1.15;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--green);
 }
 
 .masthead .role {
-  margin: 0.35rem 0 0;
-  font-family: var(--sans);
-  font-size: 0.83rem;
-  letter-spacing: 0.02em;
-  color: var(--muted);
+  margin: 0.45rem 0 0;
+  font-size: 0.86em;
+  color: var(--soft);
 }
 
-.masthead .role .org { color: var(--ink); }
+.masthead .role .org { color: var(--yellow); }
 
 .bio {
-  margin: 1.4rem 0 0;
+  margin: 1.5rem 0 0;
   max-width: var(--measure);
-  color: var(--soft);
   text-wrap: pretty;
 }
 
 .contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0;
-  margin: 1.5rem 0 0;
+  gap: 0.3rem 0;
+  margin: 1.6rem 0 0;
   padding: 0;
   list-style: none;
-  font-family: var(--sans);
-  font-size: 0.82rem;
+  font-size: 0.85em;
 }
 
-.contact li + li::before {
+/* separator trails its item, so a wrapped line never opens with a stray dot */
+.contact li:not(:last-child)::after {
   content: "·";
   color: var(--rule);
   margin: 0 0.6em;
@@ -129,60 +137,63 @@ a:focus-visible {
 /* --- sections ------------------------------------------------------------- */
 
 section {
-  margin-top: 3.25rem;
-  padding-top: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 1.6rem;
   border-top: 1px solid var(--rule);
 }
 
+/* section labels are comments, and comments are italic in this theme */
 section > h2 {
   margin: 0 0 1.4rem;
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: 0.8em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: var(--dim);
 }
 
-/* --- entries (experience, software, education, awards) -------------------- */
+section > h2::before { content: "// "; }
+
+/* --- entries (experience, software, education) ---------------------------- */
 
 .entry, .pub { margin-top: 1.9rem; }
 .entry:first-of-type, .pub:first-of-type { margin-top: 0; }
 
-.head { }
 .head::after { content: ""; display: block; clear: both; }
 
 .head h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.005em;
+  line-height: 1.45;
+  color: var(--blue);
   text-wrap: pretty;
 }
 
 .head h3 .org {
   font-weight: 400;
-  color: var(--soft);
+  color: var(--yellow);
 }
+
+.head h3 a { color: var(--blue); }
+.head h3 a:hover { color: var(--orange); }
 
 .when {
   float: right;
   margin-left: 1.25rem;
-  font-family: var(--sans);
-  font-size: 0.76rem;
-  line-height: 1.85;
-  letter-spacing: 0.01em;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 0.82em;
+  line-height: 1.78;
+  color: var(--purple);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
 .note {
-  margin: 0.4rem 0 0;
+  margin: 0.45rem 0 0;
   max-width: var(--measure);
-  font-size: 0.94rem;
-  line-height: 1.58;
+  font-size: 0.92em;
+  line-height: 1.6;
   color: var(--soft);
   text-wrap: pretty;
 }
@@ -191,18 +202,18 @@ section > h2 {
 
 .pub h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.005em;
+  line-height: 1.45;
+  color: var(--blue);
   text-wrap: pretty;
 }
 
 .pub .authors,
 .pub .venue {
-  margin: 0.3rem 0 0;
-  font-size: 0.88rem;
-  line-height: 1.5;
+  margin: 0.32rem 0 0;
+  font-size: 0.85em;
+  line-height: 1.55;
   color: var(--muted);
 }
 
@@ -211,37 +222,43 @@ section > h2 {
   color: var(--ink);
 }
 
-.pub .venue { margin-top: 0.15rem; }
-.pub h3 + .venue { margin-top: 0.3rem; }   /* no author list above it */
+.pub .venue { margin-top: 0.12rem; color: var(--dim); }
+.pub h3 + .venue { margin-top: 0.32rem; }   /* no author list above it */
 
-.num { font-variant-numeric: lining-nums tabular-nums; }
-
-.refs {
-  margin: 0.55rem 0 0;
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.01em;
+/* journal and conference names: italic by citation convention, string-coloured */
+.pub .venue i {
+  font-style: italic;
+  color: var(--yellow);
 }
 
-.refs a { margin-right: 1.05rem; }
+.num {
+  color: var(--purple);
+  font-variant-numeric: tabular-nums;
+}
+
+.refs {
+  margin: 0.6rem 0 0;
+  font-size: 0.82em;
+}
+
+.refs a { margin-right: 1.1rem; }
 .refs a:last-child { margin-right: 0; }
 
 /* --- footer --------------------------------------------------------------- */
 
 footer {
-  margin-top: 3.25rem;
-  padding-top: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 1.6rem;
   border-top: 1px solid var(--rule);
-  font-family: var(--sans);
-  font-size: 0.76rem;
-  color: var(--muted);
+  font-size: 0.8em;
+  color: var(--dim);
 }
 
 footer p { margin: 0; }
 
 /* --- wide screens: section labels move into the left margin --------------- */
 
-@media (min-width: 58rem) {
+@media (min-width: 64rem) {
   main {
     max-width: calc(var(--label) + var(--gutter) + var(--measure) + 3rem);
   }
@@ -267,37 +284,38 @@ footer p { margin: 0; }
     position: sticky;
     top: 2.25rem;
     margin: 0;
-    padding-top: 0.32rem;   /* optical align with the first entry's cap height */
+    padding-top: 0.3rem;      /* optical align with the first entry's cap height */
     text-align: right;
   }
 }
 
-/* --- print: the page is already a CV ------------------------------------- */
+/* --- print: ink on paper, not a screenshot of an editor ------------------- */
 
 @media print {
   :root {
-    --paper: #fff;
+    --ground: #fff;
     --ink: #000;
     --soft: #222;
-    --muted: #555;
+    --muted: #444;
+    --dim: #555;
     --rule: #bbb;
-    --accent: #000;
+    --green: #000;
+    --blue: #000;
+    --yellow: #000;
+    --purple: #333;
+    --red: #000;
+    --orange: #000;
   }
 
   @page { margin: 18mm 16mm; }
 
-  body { font-size: 10.5pt; line-height: 1.45; }
+  body { font-size: 10pt; line-height: 1.45; }
 
-  main {
-    max-width: none;
-    padding: 0;
-  }
+  main { max-width: none; padding: 0; }
 
   .bio, .note { max-width: none; }   /* the page margin already sets the measure */
 
-  a {
-    text-decoration: none;
-  }
+  a { text-decoration: none; }
 
   section {
     margin-top: 1.4rem;
@@ -305,9 +323,9 @@ footer p { margin: 0; }
     break-inside: avoid;
   }
 
-  .entry, .pub { break-inside: avoid; }
-
   section > h2 { position: static; }
+
+  .entry, .pub { break-inside: avoid; }
 
   footer { display: none; }
 }
