@@ -7,8 +7,21 @@
    comment) is carried by the neutral ramp, whose middle step is the theme's
    own editor foreground. Italics go where the theme and the citation style
    agree on them — comments and journal names.
+
+   Two faces, split by what the reader does with the text. Reference data —
+   the name, section labels, titles, dates, author lists, journal names — is
+   monospaced, because that is the material the theme is about. Running prose
+   is set in IBM Plex Sans on a narrower measure, because a uniform advance
+   width stops words forming recognisable shapes over a paragraph.
    --------------------------------------------------------------------------- */
 
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/IBMPlexSans-400.woff2") format("woff2");
+}
 @font-face {
   font-family: "JetBrains Mono";
   font-style: normal;
@@ -44,8 +57,10 @@
   --link-hi:#82a6cc;
 
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
-  --measure: 40rem;   /* ~66 characters at this advance width */
+  --measure: 40rem;   /* ~66 characters of mono */
+  --prose:   32rem;   /* ~66 characters of sans, which is the narrower face */
   --label:    8.5rem; /* margin column holding section labels */
   --gutter:   3rem;
 }
@@ -111,7 +126,11 @@ a:focus-visible {
 
 .bio {
   margin: 1.5rem 0 0;
-  max-width: var(--measure);
+  max-width: var(--prose);
+  font-family: var(--sans);
+  font-size: 1.02em;   /* Plex Sans runs a touch smaller than the mono at 1em */
+  line-height: 1.65;
+  color: var(--soft);
   text-wrap: pretty;
 }
 
@@ -185,10 +204,11 @@ section > h2::before { content: "// "; }
 }
 
 .note {
-  margin: 0.45rem 0 0;
-  max-width: var(--measure);
-  font-size: 0.92em;
-  line-height: 1.6;
+  margin: 0.5rem 0 0;
+  max-width: var(--prose);
+  font-family: var(--sans);
+  font-size: 0.95em;
+  line-height: 1.62;
   color: var(--soft);
   text-wrap: pretty;
 }
@@ -303,6 +323,7 @@ footer p { margin: 0; }
   main { max-width: none; padding: 0; }
 
   .bio, .note { max-width: none; }   /* the page margin already sets the measure */
+  .bio { font-size: 1em; }
 
   a { text-decoration: none; }
 

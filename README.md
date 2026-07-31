@@ -2,7 +2,7 @@
 
 Personal site — <https://gihuncho.github.io>
 
-Two files: `index.html` and `style.css`, plus three woff2 faces in `fonts/`.
+Two files: `index.html` and `style.css`, plus four woff2 faces in `fonts/`.
 No build step, no dependencies, no JavaScript, and no external requests —
 the fonts are served from this repository.
 
@@ -15,6 +15,12 @@ separated by the neutral ramp instead, whose middle step is the theme's own
 editor foreground. Italics appear only where the theme and the citation style
 agree — section labels (comments) and journal names. Dark only; `@media
 print` falls back to ink on paper.
+
+Two faces, split by what the reader does with the text. Reference data — the
+name, section labels, titles, dates, author lists, journal names — is set in
+JetBrains Mono, because that is the material the theme is about. Running
+prose is IBM Plex Sans on a narrower measure, because a uniform advance width
+stops words forming recognisable shapes over a paragraph.
 
 ## Editing
 
