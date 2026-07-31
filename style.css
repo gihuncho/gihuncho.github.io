@@ -309,7 +309,6 @@ footer p { margin: 0; }
 
   section > h2 { position: static; }
 
-  .bio + .bio,
   footer { display: none; }
 }
 
