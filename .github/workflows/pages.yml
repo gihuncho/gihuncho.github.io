@@ -23,6 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # Pages serves assets with cache-control: max-age=600, so a stylesheet
+      # change is invisible for ten minutes unless its URL changes with it.
+      - name: Stamp the stylesheet URL with this commit
+        run: sed -i "s|style\.css?v=dev|style.css?v=${GITHUB_SHA::8}|" index.html
       # The site is plain HTML and CSS, so the repository is the artifact.
       # upload-pages-artifact excludes .git and .github on its own.
       - uses: actions/upload-pages-artifact@v3

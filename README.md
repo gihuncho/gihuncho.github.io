@@ -38,3 +38,8 @@ python3 -m http.server
 
 Pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the
 repository as-is to GitHub Pages.
+
+Pages serves assets with `cache-control: max-age=600`, so the workflow
+rewrites `style.css?v=dev` to the commit SHA before uploading. A stylesheet
+change therefore reaches browsers immediately. Leave the `?v=dev` placeholder
+alone in the source; it is what makes the file work when opened locally.
