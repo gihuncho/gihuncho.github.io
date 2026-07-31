@@ -1,30 +1,29 @@
-# Resume site with projects
+# gihuncho.github.io
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Personal site — <https://gihuncho.github.io>
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gihunchos-projects/v0-resume-site-with-projects)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/2Cc0vxLbKd2)
+Two files: `index.html` and `style.css`. No build step, no dependencies, no
+JavaScript, no external requests (fonts resolve from the system stack).
 
-## Overview
+## Editing
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Open `index.html` and edit the text. Every section is a `<section>` with a
+label in `<h2>`; entries follow one of two shapes:
+
+- `article.pub` — publications: title, author list, venue, note, links.
+- `article.entry` — everything else: a `div.head` holding the date and the
+  title, followed by an optional `p.note`.
+
+The date goes *before* the heading inside `div.head`; it floats right so the
+title wraps around it.
+
+To preview, open the file in a browser, or serve it:
+
+```sh
+python3 -m http.server
+```
 
 ## Deployment
 
-Your project is live at:
-
-**[https://vercel.com/gihunchos-projects/v0-resume-site-with-projects](https://vercel.com/gihunchos-projects/v0-resume-site-with-projects)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/projects/2Cc0vxLbKd2](https://v0.app/chat/projects/2Cc0vxLbKd2)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the
+repository as-is to GitHub Pages.

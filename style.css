@@ -1,0 +1,318 @@
+/* ---------------------------------------------------------------------------
+   gihuncho.github.io — single stylesheet, no build step, no external requests.
+   Layout: one prose column; on wide screens section labels sit in the margin.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --paper:  #fbfaf7;
+  --ink:    #1d1c19;
+  --soft:   #46443e;   /* body prose, one step down from headings */
+  --muted:  #736f67;   /* dates, venues, metadata */
+  --rule:   #e0dcd3;
+  --accent: #8c3a2b;   /* links, underlines */
+
+  --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text",
+           Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+          "Helvetica Neue", Arial, sans-serif;
+
+  --measure: 34rem;   /* prose column */
+  --label:   7.5rem;  /* margin column holding section labels */
+  --gutter:  2.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:  #151412;
+    --ink:    #e8e4db;
+    --soft:   #c2bdb2;
+    --muted:  #8d887e;
+    --rule:   #302e29;
+    --accent: #d1866c;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-variant-numeric: oldstyle-num proportional-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+main {
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 5rem;
+}
+
+/* --- links ---------------------------------------------------------------- */
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-thickness: 0.055em;
+  text-underline-offset: 0.16em;
+  transition: color 90ms linear, text-decoration-color 90ms linear;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+/* --- masthead ------------------------------------------------------------- */
+
+.masthead h1 {
+  margin: 0;
+  font-size: 2.05rem;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.15;
+}
+
+.masthead .role {
+  margin: 0.35rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.83rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.masthead .role .org { color: var(--ink); }
+
+.bio {
+  margin: 1.4rem 0 0;
+  max-width: var(--measure);
+  color: var(--soft);
+  text-wrap: pretty;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+}
+
+.contact li + li::before {
+  content: "·";
+  color: var(--rule);
+  margin: 0 0.6em;
+}
+
+/* --- sections ------------------------------------------------------------- */
+
+section {
+  margin-top: 3.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+section > h2 {
+  margin: 0 0 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* --- entries (experience, software, education, awards) -------------------- */
+
+.entry, .pub { margin-top: 1.9rem; }
+.entry:first-of-type, .pub:first-of-type { margin-top: 0; }
+
+.head { }
+.head::after { content: ""; display: block; clear: both; }
+
+.head h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+
+.head h3 .org {
+  font-weight: 400;
+  color: var(--soft);
+}
+
+.when {
+  float: right;
+  margin-left: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+  white-space: nowrap;
+}
+
+.note {
+  margin: 0.4rem 0 0;
+  max-width: var(--measure);
+  font-size: 0.94rem;
+  line-height: 1.58;
+  color: var(--soft);
+  text-wrap: pretty;
+}
+
+/* --- publications --------------------------------------------------------- */
+
+.pub h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+
+.pub .authors,
+.pub .venue {
+  margin: 0.3rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.pub .authors b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.pub .venue { margin-top: 0.15rem; }
+.pub h3 + .venue { margin-top: 0.3rem; }   /* no author list above it */
+
+.num { font-variant-numeric: lining-nums tabular-nums; }
+
+.refs {
+  margin: 0.55rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}
+
+.refs a { margin-right: 1.05rem; }
+.refs a:last-child { margin-right: 0; }
+
+/* --- footer --------------------------------------------------------------- */
+
+footer {
+  margin-top: 3.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+footer p { margin: 0; }
+
+/* --- wide screens: section labels move into the left margin --------------- */
+
+@media (min-width: 58rem) {
+  main {
+    max-width: calc(var(--label) + var(--gutter) + var(--measure) + 3rem);
+  }
+
+  .masthead,
+  section,
+  footer {
+    display: grid;
+    grid-template-columns: var(--label) 1fr;
+    column-gap: var(--gutter);
+  }
+
+  .masthead > *,
+  section > *,
+  footer > * {
+    grid-column: 2;
+  }
+
+  section > h2 {
+    grid-column: 1;
+    grid-row: 1 / span 100;   /* not 1/-1 — there are no explicit rows to span to */
+    align-self: start;
+    position: sticky;
+    top: 2.25rem;
+    margin: 0;
+    padding-top: 0.32rem;   /* optical align with the first entry's cap height */
+    text-align: right;
+  }
+}
+
+/* --- print: the page is already a CV ------------------------------------- */
+
+@media print {
+  :root {
+    --paper: #fff;
+    --ink: #000;
+    --soft: #222;
+    --muted: #555;
+    --rule: #bbb;
+    --accent: #000;
+  }
+
+  @page { margin: 18mm 16mm; }
+
+  body { font-size: 10.5pt; line-height: 1.45; }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .bio, .note { max-width: none; }   /* the page margin already sets the measure */
+
+  a {
+    text-decoration: none;
+  }
+
+  section {
+    margin-top: 1.4rem;
+    padding-top: 0.8rem;
+    break-inside: avoid;
+  }
+
+  .entry, .pub { break-inside: avoid; }
+
+  section > h2 { position: static; }
+
+  .bio + .bio,
+  footer { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
