@@ -253,6 +253,40 @@ section > h2::before { content: "// "; }
   color: var(--muted);
 }
 
+/* the rest of the publications, folded — a disclosure, not a link, but the
+   only other thing on the page you can operate, so it takes the link colour */
+.more {
+  margin-top: 1.6rem;
+}
+
+.more > summary {
+  display: block;          /* drops the default disclosure triangle */
+  width: fit-content;
+  font-size: 0.82em;
+  color: var(--link);
+  cursor: pointer;
+  list-style: none;
+}
+
+.more > summary::-webkit-details-marker { display: none; }
+
+.more > summary::before {
+  content: "+ ";
+  font-variant-numeric: tabular-nums;
+}
+
+.more[open] > summary::before { content: "\2212 "; }
+
+.more > summary:hover { color: var(--link-hi); }
+
+.more > summary:focus-visible {
+  outline: 2px solid var(--link-hi);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.more > .pub:first-of-type { margin-top: 1.9rem; }
+
 .num { font-variant-numeric: tabular-nums; }
 
 .refs {
@@ -341,6 +375,10 @@ footer p { margin: 0; }
   }
 
   section > h2 { position: static; }
+
+  /* nothing is folded on paper */
+  .more::details-content { content-visibility: visible; }
+  .more > summary { display: none; }
 
   .entry, .pub { break-inside: avoid; }
 

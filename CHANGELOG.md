@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-01
+
+Publications now show CREPE and fold the rest behind a `+ 3 more` disclosure,
+so the one first-authored paper is not competing with work where the byline
+sits third or fourth. Built on `<details>`, which keeps it keyboard- and
+screen-reader-operable without adding the JavaScript this site does not have.
+`@media print` reopens it, so the printed CV still lists everything.
+
 ## 2026-07-31 — rewritten from scratch
 
 The site was scaffolded by [v0](https://v0.app) and last touched in September
