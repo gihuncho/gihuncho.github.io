@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-08-02
+
+The masthead now reads `Gihun Cho; 조기훈`, and Pretendard replaces Inter as
+the prose face. JetBrains Mono has no Hangul, so Pretendard also sits at the
+end of the monospace stack and picks the Korean up by per-character fallback —
+the Latin stays monospaced, the Hangul does not.
+
+Both weights are cut to Latin plus the three syllables actually on the page:
+748 KB of full Korean becomes 15 KB each. The stylesheet carries the
+`pyftsubset` command needed to recut them if more Korean is ever added.
+
 ## 2026-08-01
 
 Publications now lead with the two first-authored works — CREPE and the RSNA

@@ -11,16 +11,33 @@
    Two faces, split by what the reader does with the text. Reference data —
    the name, section labels, titles, dates, author lists, journal names — is
    monospaced, because that is the material the theme is about. Running prose
-   is set in Inter on a narrower measure, because a uniform advance width
-   stops words forming recognisable shapes over a paragraph.
+   is set in Pretendard on a narrower measure, because a uniform advance width
+   stops words forming recognisable shapes over a paragraph. Pretendard also
+   carries the Hangul the mono has no glyphs for, so it sits at the end of the
+   monospace stack and picks up 조기훈 by per-character fallback.
+
+   Its woff2 is cut to Latin plus the Hangul actually on the page — 748 KB of
+   full Korean down to 15 KB. Adding Korean text elsewhere means recutting it:
+     pyftsubset Pretendard-{Regular,SemiBold}.woff2 --flavor=woff2 \
+       --unicodes="U+0020-007E,U+00A0-00FF,U+2010-203A,U+03C4,U+2192" \
+       --text="조기훈" --layout-features='kern,liga,calt'
    --------------------------------------------------------------------------- */
 
 @font-face {
-  font-family: "Inter";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/Inter-400.woff2") format("woff2");
+  src: url("fonts/Pretendard-400.woff2") format("woff2");
+}
+/* only the masthead needs this — a real semibold rather than a synthesised one
+   behind the Hangul in the name */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Pretendard-600.woff2") format("woff2");
 }
 @font-face {
   font-family: "JetBrains Mono";
@@ -63,8 +80,10 @@
   --link:   #6089b4;   /* constant.numeric */
   --link-hi:#82a6cc;
 
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  /* Pretendard trails the mono so Hangul, which JetBrains Mono has no glyphs
+     for, falls through to it one character at a time */
+  --mono: "JetBrains Mono", "Pretendard", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
   --measure: 44rem;   /* reference data — titles, author lists */
   --prose:   34rem;   /* running prose, in the narrower face */
@@ -135,7 +154,7 @@ a:focus-visible {
   margin: 1.5rem 0 0;
   max-width: var(--prose);
   font-family: var(--sans);
-  font-size: 0.94em;   /* Inter's x-height runs large next to the mono */
+  font-size: 0.94em;   /* Pretendard's x-height runs large next to the mono */
   line-height: 1.65;
   color: var(--soft);
   text-wrap: pretty;
