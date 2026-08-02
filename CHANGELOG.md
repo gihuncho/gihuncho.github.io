@@ -2,6 +2,11 @@
 
 ## 2026-08-02
 
+Site moved to **gihun.dev**. `CNAME` now travels with the uploaded artifact so
+a deploy cannot clear the domain, and `canonical`, `og:url` and the CREPE
+project-page link point at the new host rather than redirecting through the
+old one.
+
 The masthead now reads `Gihun Cho; 조기훈`, and Pretendard replaces Inter as
 the prose face. JetBrains Mono has no Hangul, so Pretendard also sits at the
 end of the monospace stack and picks the Korean up by per-character fallback —

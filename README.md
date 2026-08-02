@@ -1,6 +1,6 @@
 # gihuncho.github.io
 
-Personal site — <https://gihuncho.github.io>
+Personal site — <https://gihun.dev>
 
 Two files: `index.html` and `style.css`, plus five woff2 faces in `fonts/`.
 No build step, no dependencies, no JavaScript, and no external requests —
@@ -45,7 +45,8 @@ See [CHANGELOG.md](CHANGELOG.md) for what changed in the 2026-07 rewrite.
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/pages.yml`, which uploads the
-repository as-is to GitHub Pages.
+repository as-is to GitHub Pages. `CNAME` holds the custom domain; it has to
+travel with the uploaded site, or a deploy can clear the domain setting.
 
 Pages serves assets with `cache-control: max-age=600`, so the workflow
 rewrites `style.css?v=dev` to the commit SHA before uploading. A stylesheet
